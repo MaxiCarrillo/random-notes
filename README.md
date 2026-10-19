@@ -24,3 +24,14 @@ Comprobaciones de calidad:
 npm run lint
 npm run build
 ```
+
+## GitHub Pages deployment
+
+Pushes to `master` automatically build and deploy the site through GitHub Actions. The workflow can also be run manually from the Actions tab.
+
+Before the first deployment, configure the repository once:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+
+The production site is available at <https://maxicarrillo.github.io/random-notes/>.
