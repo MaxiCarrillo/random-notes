@@ -1,11 +1,16 @@
 # Diez notas en treinta segundos
 
-Aplicación sencilla para practicar la localización de notas naturales en las seis cuerdas de la guitarra. Cada tirada contiene exactamente diez combinaciones únicas de nota (A–G) y cuerda (1.ª–6.ª).
+Aplicación sencilla para practicar la localización de notas naturales en las seis cuerdas de la guitarra.
 
-## Modos de práctica
+## Modos de juego
 
-- **Nivel 1 — Sin reloj:** prioriza la precisión y propone contar los trastes en voz alta desde una nota ancla.
-- **Nivel 2 — 30 segundos:** permite iniciar o reiniciar una cuenta regresiva asociada a la tirada actual. La regla de tres días consecutivos se presenta solo como orientación y no se guarda.
+- **10 notas al azar:** cada tirada contiene exactamente diez combinaciones únicas de nota (A–G) y cuerda (1.ª–6.ª) distribuidas por todo el diapasón.
+- **7 notas por cuerda:** recorre las cuerdas en orden descendente desde la 6.ª (E) hasta la 1.ª (E). En cada cuerda se presentan las 7 notas naturales en orden aleatorio (por ejemplo: B, F, G, C, A, E, D) con navegación paso a paso.
+
+## Niveles de práctica
+
+- **Nivel 1 — Sin reloj:** prioriza la precisión y propone contar los trastes en voz alta desde una nota ancla sin límite de tiempo.
+- **Nivel 2 — 30 segundos:** permite iniciar una cuenta regresiva de 30 segundos asociada a la tirada activa. En el modo por cuerdas, cada cuerda cuenta con su propio temporizador independiente de 30 segundos. La regla de tres días consecutivos se presenta solo como orientación y no se guarda.
 
 La aplicación no incluye cuentas, historial, puntuación ni persistencia.
 

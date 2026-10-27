@@ -94,6 +94,19 @@
   padding: 34px 44px 40px;
 }
 
+.practice-selectors {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.selector-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .section-heading,
 .practice-header {
   display: flex;
@@ -118,6 +131,7 @@ h2 {
   letter-spacing: -0.035em;
 }
 
+.mode-tabs,
 .level-tabs {
   display: flex;
   gap: 8px;
@@ -126,6 +140,7 @@ h2 {
   border-radius: 14px;
 }
 
+.mode-tab,
 .level-tab {
   min-width: 142px;
   padding: 10px 18px;
@@ -135,23 +150,29 @@ h2 {
   border-radius: 10px;
   cursor: pointer;
   text-align: left;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
+.mode-tab span,
+.mode-tab small,
 .level-tab span,
 .level-tab small {
   display: block;
 }
 
+.mode-tab span,
 .level-tab span {
   color: inherit;
   font-weight: 700;
 }
 
+.mode-tab small,
 .level-tab small {
   margin-top: 1px;
   font-size: 0.7rem;
 }
 
+.mode-tab.active,
 .level-tab.active {
   color: white;
   background: var(--green);
@@ -201,6 +222,71 @@ h2 {
   border-radius: 0 0 28px 28px;
 }
 
+.string-stepper-wrapper {
+  margin-top: 24px;
+}
+
+.string-stepper {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  background: #eef1e9;
+  padding: 6px;
+  border-radius: 14px;
+}
+
+.string-step-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.string-step-pill:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+}
+
+.string-step-pill.active {
+  background: var(--green);
+  color: white;
+  box-shadow: 0 4px 14px rgba(18, 62, 53, 0.18);
+}
+
+.string-step-pill.completed:not(.active) {
+  background: #e2e8dc;
+  color: var(--green-dark);
+}
+
+.step-str-number {
+  font-weight: 700;
+}
+
+.step-str-tuning {
+  font-size: 0.76rem;
+  opacity: 0.85;
+}
+
+.step-check {
+  font-size: 0.75rem;
+  color: var(--lime);
+  font-weight: 800;
+}
+
+.string-step-pill.completed:not(.active) .step-check {
+  color: var(--green);
+}
+
 .timer {
   display: flex;
   align-items: baseline;
@@ -239,6 +325,10 @@ h2 {
   margin: 28px 0 0;
   padding: 0;
   list-style: none;
+}
+
+.note-grid.seven-notes {
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .note-card {
@@ -288,11 +378,40 @@ h2 {
   font-size: 0.9rem;
 }
 
+.completion-banner {
+  margin: 24px 0 0;
+  padding: 22px 24px;
+  background: #edf5dc;
+  border: 1px solid #c8dd9c;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.completion-banner h3 {
+  margin: 0 0 8px;
+  color: var(--green-dark);
+  font-size: 1.2rem;
+}
+
+.completion-banner p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.completion-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
 .actions {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 28px;
+  flex-wrap: wrap;
 }
 
 .primary-button,
@@ -340,6 +459,12 @@ footer {
   font-size: 0.78rem;
 }
 
+@media (max-width: 980px) {
+  .note-grid.seven-notes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 760px) {
   .app-shell {
     width: min(100% - 20px, 600px);
@@ -368,6 +493,12 @@ footer {
     padding: 28px 20px;
   }
 
+  .practice-selectors {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
   .section-heading,
   .practice-header {
     align-items: stretch;
@@ -375,14 +506,22 @@ footer {
     gap: 18px;
   }
 
+  .mode-tabs,
   .level-tabs {
     width: 100%;
   }
 
+  .mode-tab,
   .level-tab {
     min-width: 0;
     flex: 1;
     padding: 10px 12px;
+  }
+
+  .string-stepper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
 
   .timer {
@@ -392,6 +531,10 @@ footer {
   .note-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 9px;
+  }
+
+  .note-grid.seven-notes {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .note-card {
@@ -414,6 +557,7 @@ footer {
 }
 
 @media (max-width: 390px) {
+  .mode-tab small,
   .level-tab small {
     display: none;
   }
